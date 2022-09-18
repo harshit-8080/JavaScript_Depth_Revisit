@@ -13,4 +13,7 @@ console.log(typeof null);
 console.log(typeof undefined);
 
 console.log(typeof Symbol('hello'));
+
 console.log(typeof NaN);
+
+console.log(typeof typeof(false));
