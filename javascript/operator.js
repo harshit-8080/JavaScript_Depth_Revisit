@@ -15,3 +15,10 @@ console.log(parseInt(10/3));
 let number = 10;
 
 console.log(number);
+
+let x = 10>5?10:5;
+let y = 10<5?10:5;
+
+console.log(x);
+
+console.log(y);
