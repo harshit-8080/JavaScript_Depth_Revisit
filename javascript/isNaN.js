@@ -14,3 +14,7 @@ console.log(Number.isNaN(NaN));
 console.log(Number.isNaN('abc'));
 
 // this function doesnt do coercion.
+
+let x = 9;
+x.toString()
+console.log(typeof x);
