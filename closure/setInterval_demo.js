@@ -12,8 +12,8 @@ setTimeout(function(){
 
     clearTimeout(id1);
 
-    
-},10000);
+
+},8010);
 
 
 // let id2 = setInterval(function(){
