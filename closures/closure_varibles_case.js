@@ -39,4 +39,22 @@ function sum(params) {
     }
 }
 
-sum();
+// sum();
+
+
+const add = (function name(params) {
+    
+    //var counter = 0;
+    // doesnot matter var or let because it's not creating new blocks
+    let counter = 0;
+    return function ret(){
+    
+        counter+=1;
+
+        return counter;
+    }
+})();
+
+console.log(add());
+console.log(add());
+console.log(add());
