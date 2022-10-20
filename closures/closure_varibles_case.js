@@ -27,4 +27,16 @@ function gun(params) {
     }
 }
 
-gun();
+// gun();
+
+function sum(params) {
+    
+    for(var i = 0; i<3; i++){
+        let j = i;
+        setTimeout(function(){
+            console.log(j);
+        },i*2000);
+    }
+}
+
+sum();
