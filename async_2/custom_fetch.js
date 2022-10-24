@@ -15,7 +15,20 @@ function customFetch(callback){
     }, 3000);
 }
 
-customFetch(function(song){
+function save (callback){
+    
+    customFetch(function(song){
+        console.log("open you folder to access = ", song);
 
-    console.log("open you folder to access = ", song);
-});
+        console.log("saving to folder ");
+        let fileName = song + ".mp3";
+        callback(fileName);
+    });
+
+}
+
+save(function(fileName){
+    console.log("saved file = ",fileName );
+})
+
+
