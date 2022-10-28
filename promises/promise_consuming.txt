@@ -15,4 +15,5 @@ Consuming a promise is next important thing while learning promise.
 
 7.  what is the parameter ? This parameter is value property.
 
+8. .then() also returns a promise. we can chain this .then() functions.
 
