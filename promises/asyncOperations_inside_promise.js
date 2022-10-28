@@ -9,6 +9,8 @@ function fun() {
 
             resolve("done")
 
+            console.log("helloo");
+
         }, 3000);
 
         console.log("outside setTimeout function");
