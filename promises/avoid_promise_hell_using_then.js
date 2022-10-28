@@ -2,7 +2,7 @@ function fetchData(url) {
 
     return new Promise(function (resolve, reject) {
         
-        console.log("downloaded started");
+        console.log("downloading started");
 
         setTimeout(function(){
 
@@ -45,22 +45,33 @@ function uploadToDrive(filename) {
     
 }
 
+fetchData()
+.then(function (value) {
 
-let song = fetchData("www.song.com");
-song.then(function(value){
-    console.log("song is downloaded =>  ", value);
+    console.log("downloading completed");
+    console.log("song => ",value);
+
+    return value;
+})
+.then(function (value) {
 
     let filename = writeToFile(value);
-    filename.then(function(value){
-        console.log("writing is completed => ", value);
+    console.log("writing completed");
 
-        let uploadedLink = uploadToDrive(value);
-        uploadedLink.then(function (value) {
-            console.log("uploading is completed => ", value);
-        })
+    return filename;
+})
+.then(function (value) {
 
-    })
+    console.log("filname => ",value);
 
+    let uploadedUrl = uploadToDrive(value);
+    console.log("uploading completed");
+
+    return uploadedUrl;
+})
+.then(function (value) {
+
+    console.log("uploaded url => ", value);
 })
 
-// This solves inversion of control but no promise hell
+
