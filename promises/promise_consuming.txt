@@ -1,0 +1,18 @@
+Consuming a promise is next important thing while learning promise.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.  In promise, we have one property called -> onFullfillment which is an array.
+
+2.  In this array, we can attach functions to promise object using .then().
+
+3.  In this .then() function, We can pass callback function which we can execute.
+
+4.  But when this function will be executed ????? Big Question
+
+5.  JavaScript will give a chance to execute this function only when we have nothing in call stack and in global scope code.
+
+6.  This callback function which we are passing inside .then() function takes a parameter.
+
+7.  what is the parameter ? This parameter is value property.
+
+
