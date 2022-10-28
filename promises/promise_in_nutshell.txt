@@ -1,0 +1,43 @@
+Promises
+    1.  They are special js objects.
+    2.  They act like a placeholder for some future task.
+    3.  They avoid problem of inversion of control.
+    4.  They has 4 major property.
+
+            1.  status/state
+            2.  value.
+            3.  onFullfillment -> this is an array []
+            4.  onRejection
+
+    5. Status/State -> status or state can have 3 possible value.
+                        1.  pending.
+                        2.  fullfilled.
+                        3.  rejected.
+
+
+
+    6.  When status is pending value will be undefined.
+    7.  When status is fullfilled or rejected value will be updated to new value.
+
+    8.  Value -> it act like a placeholder till the time Promises finishes.
+
+    9.  onFullfillment ->
+                        1.  This is an array which contains functions that we attach to our promise object.
+                        2.  To promise object, we can attach some function using .then() method.
+                        3.  when value is updated from undefined to new value. JS has given chance to these attached function 1 by 1 with value property as their argument.
+                        4.  But only when call stack and global code is done.
+
+
+    10.  How to create a promise and return ?
+            1.  Call promise constructor and pass a callback.
+            2.  This callback expects two argument
+                1.  resolve.
+                2.  reject.
+            3.  Inside this callback, we can do some operation and based on logic we can resolve and reject.
+            4.  
+
+
+                        
+
+ 
+
