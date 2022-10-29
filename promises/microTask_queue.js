@@ -12,7 +12,7 @@ x.then((value)=>{
 
 
 // callback inside .then will go to microtask queue not event queue.
-// when this is callback will go to microtask queue ?? --> They will go
+// when this is callback will go to microtask queue ?? --> They will go when promise is resolved or status is fullfilled
 // priority of microtask queue is higher than event queue.
 
 
