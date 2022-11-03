@@ -13,3 +13,8 @@ parent bc9d092398b666bf6053e5a2d8de74e1645ac6f9
 author Harshit Raj <41303856+harshit-8080@users.noreply.github.com> 1667491507 +0530
 committer Harshit Raj <41303856+harshit-8080@users.noreply.github.com> 1667491507 +0530
 
+
+
+Amending the most recent commit message
+    git commit --amend -m "New commit message"
+
