@@ -1,10 +1,15 @@
 # git commands
 
- git cat-file -p a8725d
+git cat-file -p a8725d
 console.log("i am coding");
 
  git cat-file -t a8725d
-blob
+ blob
+
+
+
+"git cat-file -p commitD"
+
 
 
 harshit@Harshits-MBP git_internal % git cat-file -p ded43
@@ -17,4 +22,7 @@ committer Harshit Raj <41303856+harshit-8080@users.noreply.github.com> 166749150
 
 Amending the most recent commit message
     git commit --amend -m "New commit message"
+
+
+
 
