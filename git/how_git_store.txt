@@ -1,0 +1,10 @@
+
+1.  Folder is stores as tree and files stored as blob.
+
+2.  go to git init folder
+        
+        1.  And do tree .git
+        
+        2.  git cat-file -t commitId
+        
+        3.  git cat-file -p commitId
