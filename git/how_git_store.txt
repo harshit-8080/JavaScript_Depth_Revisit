@@ -8,3 +8,9 @@
         2.  git cat-file -t commitId
         
         3.  git cat-file -p commitId
+
+
+in git repo
+
+    1.  folder stored as tree.
+    2.  files inside folder is stored as blob.
