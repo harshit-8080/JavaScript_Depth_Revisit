@@ -1,0 +1,5 @@
+	git rm —cached fileName
+		
+		1.	case 1 :- 		It moves files/changes (staged area) to untracked area
+
+		2.	 case 2 :-	if file moved to 
