@@ -1,0 +1,18 @@
+Our code can be in one of the 3 areas.
+
+
+    1.  working area know as untrack files.
+            The file and changes which are not in your staging area and maybe currently not handled by.
+
+
+    2.  Staging area => 
+
+            1.  Files and changes which are surely goint to be part of next commit are in staging area.
+
+            2.  Files and changes come to staging area when we do -> git add fileName or git add .
+
+            3. Staging area is the place get know what wil changes current and nect commit.
+
+            4.  
+
+
