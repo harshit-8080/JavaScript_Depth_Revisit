@@ -1,10 +1,12 @@
 class Product {
 
-    constructor(name, price){
+    description = "this is prodcut class";
+    constructor(name, price, description){
 
         // here we declare data members
         this.name = name;
         this.price = price;
+        this.description = description
     }
     
     // here we declare methds
@@ -18,8 +20,8 @@ class Product {
     }
 }
 
-const iphone = new Product("iphone13", 55000);
-const macbook = new Product("macbook pro", 200000);
+const iphone = new Product("iphone13", 55000, "iphone 13 128GB");
+const macbook = new Product("macbook pro", 200000, "m1 chip 512 SSD");
 
 
 console.log(iphone);
