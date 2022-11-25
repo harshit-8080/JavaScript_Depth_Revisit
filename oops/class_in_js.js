@@ -1,6 +1,10 @@
 class Product {
 
+    // THIS IS ALSO OKAY BUT NOT A GOOD PRACTICE
     description = "this is prodcut class";
+    
+
+    // A CLASS MAY ONLY HAVE ONE CONSTRUCTOR.
     constructor(name, price, description){
 
         // here we declare data members
@@ -8,7 +12,8 @@ class Product {
         this.price = price;
         this.description = description
     }
-    
+
+
     // here we declare methds
     getData(){
 
