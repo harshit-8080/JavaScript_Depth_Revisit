@@ -2,10 +2,12 @@ class Product {
 
     constructor(name, price){
 
+        // here we declare data members
         this.name = name;
         this.price = price;
     }
-
+    
+    // here we declare methds
     getData(){
 
         const product = {
