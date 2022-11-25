@@ -18,6 +18,16 @@ class Product {
     }
 }
 
-const p1 = new Product("iphone13", 55000);
+const iphone = new Product("iphone13", 55000);
+const macbook = new Product("macbook pro", 200000);
 
-console.log(p1.getData());
+
+console.log(iphone);
+// Product { name: 'iphone13', price: 55000 }
+
+console.log(macbook);
+// Product { name: 'macbook pro', price: 200000 }
+
+
+
+console.log(iphone.getData());
