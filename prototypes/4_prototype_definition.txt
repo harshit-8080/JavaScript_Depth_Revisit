@@ -1,0 +1,76 @@
+
+Question:-  What is prototype ?
+
+1.  Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+
+2.  Whenever we define a function, There is properties called "prototype" also created.
+
+3.  Now function which is created recently ex - fun() has this properties prototype.
+
+4. Using this property, fun can access a unnamed object which was also created when define fun function.
+
+5.  fun.prototype is pointing to this unnamed object {}. This unamed object {} will be also linked to Object.prototype (unamed object).
+
+6.  We can add something properties to this unnamed object {}, Using fun.prototype. Check below example.
+
+        fun.prototype.display = function example() { console.log("hey") };
+
+
+7.  This unnamed object has also one property called constructor.
+
+
+8.  Using this constructor property, We can now access the fun function. That's why below will return true.
+
+        Product.prototype == Product.prototype.constructor.prototype  // true.
+
+
+
+9. Now when we create objects using new keyword like below  
+        
+        const p = new Product();
+
+        and rememeber linking step while creating objects using new.
+
+        Step 1. empty object.
+        Step 2. Linking step -> it will link this empty object with Product.prototype (unamed object).
+
+
+10. Once Our empty object (created using new) is linked. Now We have all access to prototype chain.
+
+
+
+
+11.  How do this empty object will access the linked unamed object.
+        
+        p.__proto__ = Product.property  // Samjh aaya kuch
+
+        or 
+
+        we can even write directly to check in all prototype chain
+
+        p.display() // this is in Product.prototype.
+
+        p.toString() // this is not in Product.prototype, So it will above that is Object.prototype. And here it finds toString.
+
+
+
+
+12.     __proto__
+
+        This __proto__ sets all properties of the object set in its [[Prototype]] to the target object.
+
+        const l = console.log
+        const obj = {
+                method: function() {
+                        l("method in obj")
+                }
+        }
+        const obj2 = {}
+        obj2.__proto__ = obj
+        obj2.method()
+
+
+
+13. We can add properties to Product.prototype using p.__proto__.addingFunction.
+
+
