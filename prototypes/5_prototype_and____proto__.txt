@@ -1,0 +1,7 @@
+1.  prototype property is created when a function is declared.
+
+2.  Person.prototype property is created internally once you declare above function.
+
+3.  Every instance created using new Person() has a __proto__ property which points to the Person.prototype
+
+4.  __proto__ is not a standard way of accessing the prototype chain, the standard but similar approach is to use Object.getPrototypeOf(obj).
