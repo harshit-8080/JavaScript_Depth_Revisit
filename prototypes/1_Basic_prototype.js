@@ -26,7 +26,12 @@ Product.prototype.fun3 = function display() {
 }
 
 
+console.log(Product.prototype);
 p.display();
 p.fun1();
 p.fun2();
 p.fun3();
+
+
+console.log(Object);
+console.log(Object.prototype.constructor);
