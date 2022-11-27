@@ -37,6 +37,8 @@ console.log(p);
 
 p.getCategoryName();
 
+p.getDetails();
+
 
 
 
