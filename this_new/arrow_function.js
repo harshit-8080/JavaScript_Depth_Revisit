@@ -1,44 +1,30 @@
-// function fun(n,p,d) {
-    
-//     this.name = n;
-//     this.price = p;
-//     this.desc = d;
-//     this.display = function gun() {
-        
-//         console.log("printing ", this);
-//     }
-// }
-
 const obj = {
 
     name : "harshit",
     age : 100,
     display: function fun() {
-        console.log(this);
+        console.log(this.name);
     },
     show:()=>{
-        console.log(this);
-    }
+        console.log(this.name);
+    },
+    
+    get:function() {
+        // console.log(this);
+        setTimeout(()=>{
+            console.log(this.name);
+        },0)
+    },
+    pet:function() {
+        // console.log(this);
+        setTimeout(function(){
+            console.log(this.name);
+        },0)
+    },
 
 }
 
-// obj.display();
-// obj.show();
-
-
-let lop = {
-    username : 'Hans Gruber',
-    hello:function f1() {
-        console.log("hello ",this.username);
-    },
-    bye:()=>{
-        city = "chapra"
-        console.log("this ",this);
-        console.log("bye ", this.city);
-    }
-
-};
-
-console.log(lop);
-lop.hello();
-lop.bye();
+obj.display();
+obj.show();
+obj.get();
+obj.pet();  // doubt
