@@ -1,6 +1,6 @@
 /**
  
- Function.prototype.bind()
+ Function.prototype.bind()  -> "helps in binding a function with an object context"
 
  bind() -> It returns a bound function with the context which will be invoked later. 
 
