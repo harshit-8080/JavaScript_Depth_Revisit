@@ -13,7 +13,7 @@ Behaviour of this in js is different thans c++ and java.
 
  */
 
-function Product(n,p) {
+function Product1(n,p) {
     
     console.log(this);  // Product {}
 
@@ -26,10 +26,10 @@ function Product(n,p) {
 
 
 
-const p1 = Product("harshit", 2000);
+const p1 = Product1("harshit", 2000);
 // here Since we are not calling with new keyword, That's why calling site of "this" is global. That's why this is refrencing global object.
 
 
 
-const p2 = new Product("iphone13", 100000);
+const p2 = new Product1("iphone13", 100000);
 // here Since we are calling with new keyword, That's why calling site of "this" is global. That's why this is refrencing calling site i:e "p2".
