@@ -34,3 +34,5 @@ p.getCategoryName();
 
 p.getDetails();
 
+p.example();
+
