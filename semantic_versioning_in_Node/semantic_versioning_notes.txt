@@ -8,9 +8,9 @@
 4.  where third x denotes patch release.
 
 
-5.  "somepackage":"^0.13.0" -> if we do npm install it can upgrade to major release (first x).
+5.  "somepackage":"^0.13.0" -> if we do npm install it can upgrade to minor release (second x).
 
-6.  "somepackage":"~0.13.0" -> if we do npm install it can upgrade to minor release (second x).
+6.  "somepackage":"~0.13.0" -> if we do npm install it can upgrade to patch release (third x).
 
 7.  "somepackage":"0.13.0" -> if we do npm install it can't update. It's called dependency locked.
 
