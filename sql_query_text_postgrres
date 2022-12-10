@@ -1,0 +1,1159 @@
+Last login: Sat Dec 10 15:43:35 on ttys009
+/Users/harshit/.zshrc:11: unmatched "
+harshit@Harshits-MBP ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+harshit@Harshits-MBP ~ % 
+harshit@Harshits-MBP ~ % psql -u postgres
+psql: invalid option -- u
+Try "psql --help" for more information.
+harshit@Harshits-MBP ~ % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+harshit@Harshits-MBP ~ % 
+harshit@Harshits-MBP ~ % psql -u postgres
+psql: invalid option -- u
+Try "psql --help" for more information.
+harshit@Harshits-MBP ~ % psql -U  postgres
+Password for user postgres: 
+psql (14.2)
+Type "help" for help.
+
+postgres=# 
+
+
+
+postgres=# 
+postgres=# \dt
+             List of relations
+ Schema |     Name      | Type  |  Owner   
+--------+---------------+-------+----------
+ public | test_millions | table | postgres
+(1 row)
+
+postgres=# \l
+                                List of databases
+       Name       |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+------------------+----------+----------+---------+-------+-----------------------
+ ayushBhopalDB    | postgres | UTF8     | C       | C     | 
+ employee         | postgres | UTF8     | C       | C     | 
+ farming_database | postgres | UTF8     | C       | C     | 
+ limelight        | postgres | UTF8     | C       | C     | 
+ limetest         | postgres | UTF8     | C       | C     | 
+ multerdb         | postgres | UTF8     | C       | C     | 
+ objection        | postgres | UTF8     | C       | C     | 
+ postgres         | postgres | UTF8     | C       | C     | 
+ template0        | postgres | UTF8     | C       | C     | =c/postgres          +
+                  |          |          |         |       | postgres=CTc/postgres
+ template1        | postgres | UTF8     | C       | C     | =c/postgres          +
+                  |          |          |         |       | postgres=CTc/postgres
+ test121          | postgres | UTF8     | C       | C     | 
+ testdb           | postgres | UTF8     | C       | C     | 
+(12 rows)
+
+postgres=# \c movieDB
+connection to server on socket "/tmp/.s.PGSQL.5432" failed: FATAL:  database "movieDB" does not exist
+Previous connection kept
+postgres=# create database moviedb;
+CREATE DATABASE
+postgres=# 
+postgres=# 
+
+
+
+
+
+
+
+
+postgres=# 
+postgres=# \c moviedb 
+You are now connected to database "moviedb" as user "postgres".
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# \dt
+Did not find any relations.
+moviedb=# \! ls
+AWSCLIV2.pkg	Desktop		Downloads	Movies		Pictures	Public		erl_crash.dump	hello.java
+Applications	Documents	Library		Music		Postman		cd		f1.class
+moviedb=# \! pwd
+/Users/harshit
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# create table actors (name varchar(100), gender varchar(100), charges int, id serial);
+CREATE TABLE
+moviedb=# \d actors
+                                    Table "public.actors"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ name    | character varying(100) |           |          | 
+ gender  | character varying(100) |           |          | 
+ charges | integer                |           |          | 
+ id      | integer                |           | not null | nextval('actors_id_seq'::regclass)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# insert into actors(SRK,MALE,10000);
+ERROR:  syntax error at or near "10000"
+LINE 1: insert into actors(SRK,MALE,10000);
+                                    ^
+moviedb=# insert into actors('SRK','MALE',1000);
+ERROR:  syntax error at or near "'SRK'"
+LINE 1: insert into actors('SRK','MALE',1000);
+                           ^
+moviedb=# insert into actors values('SRK','MALE',1000);
+INSERT 0 1
+moviedb=# insert into actors values('JONNY DEEP','MALE',1000);
+INSERT 0 1
+moviedb=# insert into actors values('CHRIS EVANS','MALE',3000);
+INSERT 0 1
+moviedb=# insert into actors values('CHRIS HEMSWORTH','MALE',3000);
+INSERT 0 1
+moviedb=# insert into actors values('RDJ','MALE',5000);
+INSERT 0 1
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# \DT
+invalid command \DT
+Try \? for help.
+moviedb=# \dtr
+         List of relations
+ Schema |  Name  | Type  |  Owner   
+--------+--------+-------+----------
+ public | actors | table | postgres
+(1 row)
+
+moviedb=# \drt
+invalid command \drt
+Try \? for help.
+moviedb=# \dt
+         List of relations
+ Schema |  Name  | Type  |  Owner   
+--------+--------+-------+----------
+ public | actors | table | postgres
+(1 row)
+
+moviedb=# 
+moviedb=# 
+
+
+
+
+
+
+moviedb=# 
+moviedb=# \d ac
+Did not find any relation named "ac".
+moviedb=# \d actors
+                                    Table "public.actors"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ name    | character varying(100) |           |          | 
+ gender  | character varying(100) |           |          | 
+ charges | integer                |           |          | 
+ id      | integer                |           | not null | nextval('actors_id_seq'::regclass)
+
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# select name from actors;
+      name       
+-----------------
+ SRK
+ JONNY DEEP
+ CHRIS EVANS
+ CHRIS HEMSWORTH
+ RDJ
+(5 rows)
+
+moviedb=# select * form actors where gender = 'MALE';
+ERROR:  syntax error at or near "form"
+LINE 1: select * form actors where gender = 'MALE';
+                 ^
+moviedb=# select * from actors where gender = 'MALE';
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# 
+
+
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors where charges = 2000;
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where charges = 3000;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+(2 rows)
+
+moviedb=# select * from actors where charges != 3000;
+    name    | gender | charges | id 
+------------+--------+---------+----
+ SRK        | MALE   |    1000 |  1
+ JONNY DEEP | MALE   |    1000 |  2
+ RDJ        | MALE   |    5000 |  5
+(3 rows)
+
+moviedb=# select * from actors where name like C%;
+ERROR:  syntax error at or near ";"
+LINE 1: select * from actors where name like C%;
+                                               ^
+moviedb=# select * from actors where name like 'C%';
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+(2 rows)
+
+moviedb=# 
+moviedb=# select * from actors where name like '%';
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# 
+moviedb=# 
+moviedb=# 
+moviedb=# select * from actors where name like '%h%';
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where name like '%H%';
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+(2 rows)
+
+moviedb=# select * from actors where name like '%h';
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where name like '%h%';
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where name like 'chris%';
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where name like '~!chris%';
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# 
+
+
+
+
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors where name like '%H%';
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+(2 rows)
+
+moviedb=# 
+
+
+
+
+
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors where charges >= 1000 and id >=1;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS EVANS     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# select * from actors where not(charges >= 1000 and id >=1);
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# select * from actors where not(charges >= 1000 and id >=1);
+ name | gender | charges | id 
+------+--------+---------+----
+(0 rows)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors limit 2;
+    name    | gender | charges | id 
+------------+--------+---------+----
+ SRK        | MALE   |    1000 |  1
+ JONNY DEEP | MALE   |    1000 |  2
+(2 rows)
+
+moviedb=# select * from actors limit 2 offset 1;
+    name     | gender | charges | id 
+-------------+--------+---------+----
+ JONNY DEEP  | MALE   |    1000 |  2
+ CHRIS EVANS | MALE   |    3000 |  3
+(2 rows)
+
+moviedb=# select * from actors limit 1 offset 1;
+    name    | gender | charges | id 
+------------+--------+---------+----
+ JONNY DEEP | MALE   |    1000 |  2
+(1 row)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors order by desc;
+ERROR:  syntax error at or near "desc"
+LINE 1: select * from actors order by desc;
+                                      ^
+moviedb=# select * from actors order by DESC;
+ERROR:  syntax error at or near "DESC"
+LINE 1: select * from actors order by DESC;
+                                      ^
+moviedb=# select * from actors o DESC;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+moviedb=# select * from actors o DESC;
+ERROR:  syntax error at or near "DESC"
+LINE 1: select * from actors o DESC;
+                               ^
+moviedb=# select * from actors order by id DESC;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ CHRIS EVANS     | MALE   |    3000 |  3
+ JONNY DEEP      | MALE   |    1000 |  2
+ SRK             | MALE   |    1000 |  1
+(5 rows)
+
+moviedb=# select * from actors order by id DESC name asc;
+ERROR:  syntax error at or near "name"
+LINE 1: select * from actors order by id DESC name asc;
+                                              ^
+moviedb=# select * from actors order by id DESC, name asc;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ CHRIS EVANS     | MALE   |    3000 |  3
+ JONNY DEEP      | MALE   |    1000 |  2
+ SRK             | MALE   |    1000 |  1
+(5 rows)
+
+moviedb=# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors limit 2 offset 1 order by id descl
+moviedb-# select * from actors limit 2 offset 1 order by id desc;
+ERROR:  syntax error at or near "order"
+LINE 1: select * from actors limit 2 offset 1 order by id descl
+                                              ^
+moviedb=# select * from actors limit 2 offset 1 order by id descl
+select * from actors limit 2 offset 1 order by id desc;
+ERROR:  syntax error at or near "order"
+LINE 1: select * from actors limit 2 offset 1 order by id descl
+                                              ^
+moviedb=# 
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# select * from actors limit 2 offset 1 order by id descl
+select * from actors limit 2 offset 1 order by id desc;
+ERROR:  syntax error at or near "order"
+LINE 1: select * from actors limit 2 offset 1 order by id descl
+                                              ^
+moviedb=# select * from actors limit 2 offset 1 order by id descl
+select * from actors limit 2 offset 1 order by id desc;l
+ERROR:  syntax error at or near "order"
+LINE 1: select * from actors limit 2 offset 1 order by id descl
+                                              ^
+moviedb-# 
+
+
+moviedb-# 
+moviedb-# select * from actors order by id desc, limit 2;
+ERROR:  syntax error at or near "l"
+LINE 1: l
+        ^
+moviedb=# select * from actors order by id desc, limit 2;
+ERROR:  syntax error at or near "limit"
+LINE 1: select * from actors order by id desc, limit 2;
+                                               ^
+moviedb=# select * from actors order by id desc limit 2;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+(2 rows)
+
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select * from actors order by id desc limit 4;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ CHRIS EVANS     | MALE   |    3000 |  3
+ JONNY DEEP      | MALE   |    1000 |  2
+(4 rows)
+
+moviedb=# select * from actors limit 4 order by id desc;
+ERROR:  syntax error at or near "order"
+LINE 1: select * from actors limit 4 order by id desc;
+                                     ^
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select * from actors order by desc limit 3 offset 2l
+moviedb-# select * from actors order by desc limit 3 offset 2l
+moviedb-# select * from actors order by desc limit 3 offset 2l
+moviedb-# 
+
+
+
+
+moviedb-# 
+moviedb-# select * from actors order by id desc limit 3;
+ERROR:  syntax error at or near "desc"
+LINE 1: select * from actors order by desc limit 3 offset 2l
+                                      ^
+moviedb=# select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by id desc limit 3;
+ERROR:  syntax error at or near "desc"
+LINE 1: select * from actors order by desc limit 3 offset 2l
+                                      ^
+moviedb=# 
+moviedb=# 
+moviedb=# 
+moviedb=# 
+moviedb=# 
+moviedb=# 
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by id desc limit 3;
+ERROR:  syntax error at or near "desc"
+LINE 1: select * from actors order by desc limit 3 offset 2l
+                                      ^
+moviedb=# select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by id desc limit 3;
+
+
+
+
+
+
+moviedb=# select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by desc limit 3 offset 2l
+select * from actors order by id desc limit 3;
+ERROR:  syntax error at or near "desc"
+LINE 1: select * from actors order by desc limit 3 offset 2l
+                                      ^
+moviedb=# select * from actors order by id desc limit 3;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ CHRIS EVANS     | MALE   |    3000 |  3
+(3 rows)
+
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# update actors set name = chris evans where id = 3;
+ERROR:  syntax error at or near "evans"
+LINE 1: update actors set name = chris evans where id = 3;
+                                       ^
+moviedb=# update actors set name = 'chris evans' where id = 3;
+UPDATE 1
+moviedb=# select * from actors;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+ chris evans     | MALE   |    3000 |  3
+(5 rows)
+
+moviedb=# select * from actors order by id;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ chris evans     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# 
+moviedb=# select * from actors order by id;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ chris evans     | MALE   |    3000 |  3
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+(5 rows)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors order by id desc;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ RDJ             | MALE   |    5000 |  5
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ chris evans     | MALE   |    3000 |  3
+ JONNY DEEP      | MALE   |    1000 |  2
+ SRK             | MALE   |    1000 |  1
+(5 rows)
+
+moviedb=# alter table actors add column country(varchar(100));
+ERROR:  syntax error at or near "("
+LINE 1: alter table actors add column country(varchar(100));
+                                             ^
+moviedb=# alter table actors add column country varchar(100);
+ALTER TABLE
+moviedb=# select * from actors;
+      name       | gender | charges | id | country 
+-----------------+--------+---------+----+---------
+ SRK             | MALE   |    1000 |  1 | 
+ JONNY DEEP      | MALE   |    1000 |  2 | 
+ CHRIS HEMSWORTH | MALE   |    3000 |  4 | 
+ RDJ             | MALE   |    5000 |  5 | 
+ chris evans     | MALE   |    3000 |  3 | 
+(5 rows)
+
+moviedb=# 
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# alter table actors update column country int;
+ERROR:  syntax error at or near "update"
+LINE 1: alter table actors update column country int;
+                           ^
+moviedb=# alter table actors drop column country int;
+ERROR:  syntax error at or near "int"
+LINE 1: alter table actors drop column country int;
+                                               ^
+moviedb=# alter table actors drop column country;
+ALTER TABLE
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select * from actors;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+ chris evans     | MALE   |    3000 |  3
+(5 rows)
+
+moviedb=# create table movies(id serial, name, primary key(id));
+ERROR:  syntax error at or near ","
+LINE 1: create table movies(id serial, name, primary key(id));
+                                           ^
+moviedb=# create table movies(id serial, name varchar(100), primary key(id));
+CREATE TABLE
+moviedb=# \d movies
+                                    Table "public.movies"
+ Column |          Type          | Collation | Nullable |              Default               
+--------+------------------------+-----------+----------+------------------------------------
+ id     | integer                |           | not null | nextval('movies_id_seq'::regclass)
+ name   | character varying(100) |           |          | 
+Indexes:
+    "movies_pkey" PRIMARY KEY, btree (id)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# alter table movies add column actorID foreign key(actorID);
+ERROR:  syntax error at or near "foreign"
+LINE 1: alter table movies add column actorID foreign key(actorID);
+                                              ^
+moviedb=# alter table movies add column actorID varchar(100) foreign key(actorID);
+ERROR:  syntax error at or near "foreign"
+LINE 1: ...lter table movies add column actorID varchar(100) foreign ke...
+                                                             ^
+moviedb=# alter table movies add column actorID varchar(100);
+ALTER TABLE
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select * from movies;
+ id | name | actorid 
+----+------+---------
+(0 rows)
+
+moviedb=# alter table movies add foreign key(actorId) refrences actors(id);
+ERROR:  syntax error at or near "refrences"
+LINE 1: alter table movies add foreign key(actorId) refrences actors...
+                                                    ^
+moviedb=# alter table movies add foreign key(actorId) references actors(id);
+ERROR:  there is no unique constraint matching given keys for referenced table "actors"
+moviedb=# alter table actors add constraints primary key(id);
+ERROR:  syntax error at or near "primary"
+LINE 1: alter table actors add constraints primary key(id);
+                                           ^
+moviedb=# alter table actors add primary key(id);
+ALTER TABLE
+moviedb=# \d actors
+                                    Table "public.actors"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ name    | character varying(100) |           |          | 
+ gender  | character varying(100) |           |          | 
+ charges | integer                |           |          | 
+ id      | integer                |           | not null | nextval('actors_id_seq'::regclass)
+Indexes:
+    "actors_pkey" PRIMARY KEY, btree (id)
+
+moviedb=# 
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# alter table movies add foreign key(actorID) reference actors(id);
+ERROR:  syntax error at or near "reference"
+LINE 1: alter table movies add foreign key(actorID) reference actors...
+                                                    ^
+moviedb=# alter table movies add foreign key(actorID) references actors(id);
+ERROR:  foreign key constraint "movies_actorid_fkey" cannot be implemented
+DETAIL:  Key columns "actorid" and "id" are of incompatible types: character varying and integer.
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# \d actors
+                                    Table "public.actors"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ name    | character varying(100) |           |          | 
+ gender  | character varying(100) |           |          | 
+ charges | integer                |           |          | 
+ id      | integer                |           | not null | nextval('actors_id_seq'::regclass)
+Indexes:
+    "actors_pkey" PRIMARY KEY, btree (id)
+
+moviedb=# \c moviedb 
+You are now connected to database "moviedb" as user "postgres".
+moviedb=# \d movies
+                                    Table "public.movies"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ id      | integer                |           | not null | nextval('movies_id_seq'::regclass)
+ name    | character varying(100) |           |          | 
+ actorid | character varying(100) |           |          | 
+Indexes:
+    "movies_pkey" PRIMARY KEY, btree (id)
+
+moviedb=# alter table movies update column actorid(int);
+ERROR:  syntax error at or near "update"
+LINE 1: alter table movies update column actorid(int);
+                           ^
+moviedb=# alter table movies alter column actorid(int);
+ERROR:  syntax error at or near "("
+LINE 1: alter table movies alter column actorid(int);
+                                               ^
+moviedb=# alter table movies alter column actorid int;
+ERROR:  syntax error at or near "int"
+LINE 1: alter table movies alter column actorid int;
+                                                ^
+moviedb=# 
+
+
+
+
+
+
+moviedb=# 
+moviedb=# alter table movies alter column actorid type int;
+ERROR:  column "actorid" cannot be cast automatically to type integer
+HINT:  You might need to specify "USING actorid::integer".
+moviedb=# alter table movies alter column actorid type int;
+ERROR:  column "actorid" cannot be cast automatically to type integer
+HINT:  You might need to specify "USING actorid::integer".
+moviedb=# alter table movies alter column actorid::int;
+ERROR:  syntax error at or near "::"
+LINE 1: alter table movies alter column actorid::int;
+                                               ^
+moviedb=# alter table movies alter column actorid::integer;
+ERROR:  syntax error at or near "::"
+LINE 1: alter table movies alter column actorid::integer;
+                                               ^
+moviedb=# 
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# alter table movies alter COLUMN actorid type int using movies::int;
+ERROR:  cannot cast type movies to integer
+LINE 1: ...able movies alter COLUMN actorid type int using movies::int;
+                                                                 ^
+moviedb=# alter table movies alter COLUMN actorid type serial;
+ERROR:  type "serial" does not exist
+moviedb=# 
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# alter table movies drop column actorid;
+ALTER TABLE
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# alter table movies add column actorID(int);
+ERROR:  syntax error at or near "("
+LINE 1: alter table movies add column actorID(int);
+                                             ^
+moviedb=# alter table movies add column actorid int;
+ALTER TABLE
+moviedb=# alter table movies add foreign key(actorid) references actors(id);
+ALTER TABLE
+moviedb=# 
+
+
+
+moviedb=# 
+moviedb=# \d movies
+                                    Table "public.movies"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ id      | integer                |           | not null | nextval('movies_id_seq'::regclass)
+ name    | character varying(100) |           |          | 
+ actorid | integer                |           |          | 
+Indexes:
+    "movies_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "movies_actorid_fkey" FOREIGN KEY (actorid) REFERENCES actors(id)
+
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select * from actors;
+      name       | gender | charges | id 
+-----------------+--------+---------+----
+ SRK             | MALE   |    1000 |  1
+ JONNY DEEP      | MALE   |    1000 |  2
+ CHRIS HEMSWORTH | MALE   |    3000 |  4
+ RDJ             | MALE   |    5000 |  5
+ chris evans     | MALE   |    3000 |  3
+(5 rows)
+
+moviedb=# select * from movies;
+ id | name | actorid 
+----+------+---------
+(0 rows)
+
+moviedb=# insert into movies values('chakde india,1);
+moviedb'# select * from movies;
+moviedb'# 
+moviedb'# \d movies
+
+
+
+
+
+
+moviedb'# \d movies
+moviedb'# ;
+moviedb'# ;
+moviedb'# 
+moviedb'# \!
+moviedb'# quit
+Use control-D to quit.
+moviedb'# exit
+Use control-D to quit.
+moviedb'# ^D\q
+harshit@Harshits-MBP ~ % 
+
+
+
+
+harshit@Harshits-MBP ~ % 
+harshit@Harshits-MBP ~ % psql -U postgres
+Password for user postgres: 
+psql (14.2)
+Type "help" for help.
+
+postgres=# \c moviedb 
+You are now connected to database "moviedb" as user "postgres".
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from movies;
+ id | name | actorid 
+----+------+---------
+(0 rows)
+
+moviedb=# insert into movies values('chak de india',1);
+ERROR:  invalid input syntax for type integer: "chak de india"
+LINE 1: insert into movies values('chak de india',1);
+                                  ^
+moviedb=# insert into movies values('chakdeindia',1);
+ERROR:  invalid input syntax for type integer: "chakdeindia"
+LINE 1: insert into movies values('chakdeindia',1);
+                                  ^
+moviedb=# \d movies
+                                    Table "public.movies"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ id      | integer                |           | not null | nextval('movies_id_seq'::regclass)
+ name    | character varying(100) |           |          | 
+ actorid | integer                |           |          | 
+Indexes:
+    "movies_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "movies_actorid_fkey" FOREIGN KEY (actorid) REFERENCES actors(id)
+
+moviedb=# 
+
+
+
+moviedb=# \d movies
+                                    Table "public.movies"
+ Column  |          Type          | Collation | Nullable |              Default               
+---------+------------------------+-----------+----------+------------------------------------
+ id      | integer                |           | not null | nextval('movies_id_seq'::regclass)
+ name    | character varying(100) |           |          | 
+ actorid | integer                |           |          | 
+Indexes:
+    "movies_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+    "movies_actorid_fkey" FOREIGN KEY (actorid) REFERENCES actors(id)
+
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# insert into movies values(1,'chakdeindia',1);
+INSERT 0 1
+moviedb=# insert into movies values(2,'captain america',2);
+INSERT 0 1
+moviedb=# 
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# select * form movies;
+ERROR:  syntax error at or near "form"
+LINE 1: select * form movies;
+                 ^
+moviedb=# select * from movies;
+ id |      name       | actorid 
+----+-----------------+---------
+  1 | chakdeindia     |       1
+  2 | captain america |       2
+(2 rows)
+
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# select actors(name),movies(name) from movies join on actors where actors.id = movies.actorid;
+ERROR:  syntax error at or near "on"
+LINE 1: select actors(name),movies(name) from movies join on actors ...
+                                                          ^
+moviedb=# select actors(name),movies(name) from movies joins on actors where actors.id = movies.actorid;
+ERROR:  syntax error at or near "on"
+LINE 1: ...elect actors(name),movies(name) from movies joins on actors ...
+                                                             ^
+moviedb=# select actors(name),movies(name) from movies joins actors where actors.id = movies.actorid;
+ERROR:  syntax error at or near "actors"
+LINE 1: ...elect actors(name),movies(name) from movies joins actors whe...
+                                                             ^
+moviedb=# 
+
+
+moviedb=# 
+moviedb=# select actors(name),movies(name) from movies joins actors on actors.id = movies.actorid;
+ERROR:  syntax error at or near "actors"
+LINE 1: ...elect actors(name),movies(name) from movies joins actors on ...
+                                                             ^
+moviedb=# select actors(name),movies(name) from movies join actors on actors.id = movies.actorid;
+ERROR:  column reference "name" is ambiguous
+LINE 1: select actors(name),movies(name) from movies join actors on ...
+                      ^
+moviedb=# select *  from movies join actors on actors.id = movies.actorid;
+ id |      name       | actorid |    name    | gender | charges | id 
+----+-----------------+---------+------------+--------+---------+----
+  1 | chakdeindia     |       1 | SRK        | MALE   |    1000 |  1
+  2 | captain america |       2 | JONNY DEEP | MALE   |    1000 |  2
+(2 rows)
+
+moviedb=# 
+
+
+
+
+moviedb=# 
+moviedb=# select *  from movies join actors on actors.id = movies.actorid;
+ id |      name       | actorid |    name    | gender | charges | id 
+----+-----------------+---------+------------+--------+---------+----
+  1 | chakdeindia     |       1 | SRK        | MALE   |    1000 |  1
+  2 | captain america |       2 | JONNY DEEP | MALE   |    1000 |  2
+(2 rows)
+
+moviedb=# 
+
+
+
+
+
+moviedb=# 
+moviedb=# select * from actors join movies on actors.id = movies.actorid;
+    name    | gender | charges | id | id |      name       | actorid 
+------------+--------+---------+----+----+-----------------+---------
+ SRK        | MALE   |    1000 |  1 |  1 | chakdeindia     |       1
+ JONNY DEEP | MALE   |    1000 |  2 |  2 | captain america |       2
+(2 rows)
+
+moviedb=# select movies.id, movies.name, actors.name from actors join movies on actors.id = movies.actorid;
+ id |      name       |    name    
+----+-----------------+------------
+  1 | chakdeindia     | SRK
+  2 | captain america | JONNY DEEP
+(2 rows)
+
+moviedb=# 
+
+
+
+moviedb=# select * from actors as a join movies as m on a.id = m.actorid;
+    name    | gender | charges | id | id |      name       | actorid 
+------------+--------+---------+----+----+-----------------+---------
+ SRK        | MALE   |    1000 |  1 |  1 | chakdeindia     |       1
+ JONNY DEEP | MALE   |    1000 |  2 |  2 | captain america |       2
+(2 rows)
+
+moviedb=# 
+
