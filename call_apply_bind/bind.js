@@ -21,7 +21,7 @@ const player = {
 
 }
 
-const commonFunction = function(params) {
+const commonFunction = function() {
     this.getDetails();
 }
 

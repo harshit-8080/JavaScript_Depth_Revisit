@@ -15,7 +15,7 @@ function fetchYANG(x,callback,callback2) {
     
   }
 
-  fetchYANG(100, (age,name) => {
+fetchYANG(100, (age,name) => {
 
         console.log(age);
         console.log(name);

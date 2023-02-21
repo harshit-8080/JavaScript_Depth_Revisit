@@ -1,14 +1,10 @@
 String.prototype.printWithLastName = function printWithLastName(lastName) {
-    
-    let updatedName = this.toString() + lastName;
-    return updatedName;
-}
-
+  let updatedName = this + " opopopopo";
+  return updatedName;
+};
 
 let x = "Harshit";
 
-let fullName = x.printWithLastName(" Raj");
-
-
+let fullName = x.printWithLastName();
 
 console.log(fullName);

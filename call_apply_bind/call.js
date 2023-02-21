@@ -12,9 +12,7 @@
     firstName:"virat",
     lastName:"kohli",
     numberToBat:3,
-    getDetails:function() {
-        console.log(this.firstName, this.lastName, this.numberToBat);
-    }
+  
 
 }
 

@@ -6,13 +6,12 @@ We can use rest and spread with arrays or objects.
 
  */
 
-
 // The rest parameters are used to pack
 
-let {...pairs } = { a: 10, b: 20, c: 30, d: 40 };
+let { ...pairs } = { a: 10, b: 20, c: 30, d: 40 };
 
 console.log(pairs);
 
-let {a,b, ...c2d} = { a: 10, b: 20, c: 30, d: 40 };
+let { a, b, ...c2d } = { a: 10, b: 20, c: 30, d: 40 };
 
-console.log(c2d); 
+console.log(c2d);
