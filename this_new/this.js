@@ -13,23 +13,17 @@ Behaviour of this in js is different thans c++ and java.
 
  */
 
-function Product1(n,p) {
-    
-    console.log(this);  // Product {}
+function Product1(n, p) {
+  console.log(this); // Product {}
 
-    this.name = n;
-    this.price = p;
+  this.name = n;
+  this.price = p;
 
-    console.log(this); // Product { name: 'iphone13', price: 23000 }
-
+  console.log(this); // Product { name: 'iphone13', price: 23000 }
 }
-
-
 
 const p1 = Product1("harshit", 2000);
 // here Since we are not calling with new keyword, That's why calling site of "this" is global. That's why this is refrencing global object.
-
-
 
 const p2 = new Product1("iphone13", 100000);
 // here Since we are calling with new keyword, That's why calling site of "this" is global. That's why this is refrencing calling site i:e "p2".

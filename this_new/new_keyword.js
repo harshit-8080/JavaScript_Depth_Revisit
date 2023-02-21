@@ -1,26 +1,19 @@
-function Product(n,p) {
-    
-    console.log(this);  // Product {}
+function Product(n, p) {
+  console.log(this); // Product {}
 
-    this.name = n;
-    this.price = p;
+  this.name = n;
+  this.price = p;
 
-    console.log(this); // Product { name: 'iphone13', price: 23000 }
+  console.log(this); // Product { name: 'iphone13', price: 23000 }
 
-    // BYDEFAULT -> IT WILL RETURN THIS IN CASE WITH NEW 
+  // BYDEFAULT -> IT WILL RETURN THIS IN CASE WITH NEW
 }
 
 const obj = new Product("iphone13", 23000); // While calling using new and not new. There is big difference. (UNDERSTAND THIS KEYWORD AFTER DETAIL)
 
-
 const f1 = Product("harshit", 2444);
 
-
-
-
 // What a function do when we write new keyword for a function
-
-
 
 /**
  

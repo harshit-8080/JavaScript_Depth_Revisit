@@ -1,18 +1,27 @@
-const person = { name: "Hou", title: "software engineer" };
-const personalInfo = { age: 32, location: "Brooklyn, NY" };
+// const person = { name: "Hou", title: "software engineer" };
+// const personalInfo = { age: 32, location: "Brooklyn, NY" };
 
-// spread operator is used to unpack the collected elements into a new object
-const employee = {
-  id: 1,
-  ...person,
-  ...personalInfo
-};
+// // spread operator is used to unpack the collected elements into a new object
+// const employee = {
+//   id: 1,
+//   ...person,
+//   ...personalInfo
+// };
 
-const temp = {
-    ...person,
-    ...personalInfo
-}
+// const temp = {
+//     ...person,
+//     ...personalInfo
+// }
 
-console.log(employee);
+// console.log(employee);
 
-console.log(temp);
+// console.log(temp);
+
+
+
+
+const obj = {name:"harshit", age:20};
+
+let {name,age} = {...obj};
+
+console.log(name, age);
