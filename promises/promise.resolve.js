@@ -1,5 +1,7 @@
 let x = Promise.resolve("harshit");
 
+console.log(x);
+
 x.then((value)=>{
     console.log(value);
 })
