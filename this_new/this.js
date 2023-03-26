@@ -1,5 +1,5 @@
 // How this works or what is this in js?
-
+// read each and every line of this file.
 /**
 
 Behaviour of this in js is different thans c++ and java.
