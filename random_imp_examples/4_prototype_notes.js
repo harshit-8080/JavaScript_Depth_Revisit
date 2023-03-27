@@ -4,3 +4,18 @@
  *
  * whenever we create function, we get a special property called prototype.
  */
+
+/**
+ *
+ * whenever we create function, we get a special property called prototype.
+ */
+
+/**
+ *
+ * whenever we create function, we get a special property called prototype.
+ */
+
+/**
+ *
+ * whenever we create function, we get a special property called prototype.
+ */
